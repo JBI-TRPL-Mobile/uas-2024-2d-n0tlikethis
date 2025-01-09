@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:template_project/presentation/screens/signin_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -20,7 +21,10 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Clash Room',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Text(
                     'Tempat kegiatan belajar mengajar menjadi satu.',
@@ -33,7 +37,13 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignInScreen()),
+                        );
+                      },
                       child: const Text('Sign In'),
                     ),
                   ),
